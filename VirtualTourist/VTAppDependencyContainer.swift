@@ -24,7 +24,7 @@ public class VTAppDependencyContainer {
         sharedTourGuideRepository = makeTourGuideRepository(apiKey: Bundle.main.infoDictionary?["FLICKR_API_KEY"] as? String)
     }
     
-    func makeMainMapViewController() -> WorldTourVC {
+    func makeWorldTourVC() -> WorldTourVC {
         WorldTourVC(tourGuideViewModel: makeTourGuideViewModel())
     }
     
