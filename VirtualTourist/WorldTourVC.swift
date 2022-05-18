@@ -9,13 +9,15 @@ import UIKit
 import VirtualTouristKit
 import MapKit
 
-class WorldTourVC: UIViewController {
+public class WorldTourVC: UIViewController {
     
     public var tourGuideViewModel: TourGuideViewModel
-    public var mapView = MKMapView()
+    public var mapView: WorldTourMapView
+    
     
     public init(tourGuideViewModel: TourGuideViewModel) {
         self.tourGuideViewModel = tourGuideViewModel
+        mapView = WorldTourMapView(tourGuideViewModel: tourGuideViewModel)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -25,16 +27,16 @@ class WorldTourVC: UIViewController {
     }
     
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         createLayout()
     }
-
-
 }
 
-extension WorldTourVC {
-    public func createLayout() {
+
+public extension WorldTourVC {
+    
+    func createLayout() {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(mapView)
         NSLayoutConstraint.activate([

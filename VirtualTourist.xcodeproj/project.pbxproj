@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD4FA72528354EF00074CAD6 /* WorldTourMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4FA72428354EF00074CAD6 /* WorldTourMapView.swift */; };
 		CDBB072A28325B4C001F9025 /* VirtualTouristKit.docc in Sources */ = {isa = PBXBuildFile; fileRef = CDBB072928325B4C001F9025 /* VirtualTouristKit.docc */; };
 		CDBB073028325B4D001F9025 /* VirtualTouristKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBB072628325B4C001F9025 /* VirtualTouristKit.framework */; };
 		CDBB073728325B4D001F9025 /* VirtualTouristKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBB073628325B4D001F9025 /* VirtualTouristKitTests.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD4FA72428354EF00074CAD6 /* WorldTourMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTourMapView.swift; sourceTree = "<group>"; };
 		CDBB072628325B4C001F9025 /* VirtualTouristKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VirtualTouristKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBB072828325B4C001F9025 /* VirtualTouristKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VirtualTouristKit.h; sourceTree = "<group>"; };
 		CDBB072928325B4C001F9025 /* VirtualTouristKit.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = VirtualTouristKit.docc; sourceTree = "<group>"; };
@@ -192,10 +194,10 @@
 		CDBB075328325CDB001F9025 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				CDCE04E328272226007FF150 /* TourGuideRepository.swift */,
+				CDCE04E128272194007FF150 /* VTTourGuideRepository.swift */,
 				CDBB074A28325BFF001F9025 /* Remote */,
 				CDBB075028325C62001F9025 /* Persistence */,
-				CDCE04E128272194007FF150 /* VTTourGuideRepository.swift */,
-				CDCE04E328272226007FF150 /* TourGuideRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -230,6 +232,7 @@
 				CDCE04D0282718C5007FF150 /* Assets.xcassets */,
 				CDCE04D2282718C5007FF150 /* LaunchScreen.storyboard */,
 				CDCE04D5282718C5007FF150 /* Info.plist */,
+				CD4FA72428354EF00074CAD6 /* WorldTourMapView.swift */,
 			);
 			path = VirtualTourist;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				CDCE04DC282719BB007FF150 /* VTAppDependencyContainer.swift in Sources */,
 				CDCE04C8282718C3007FF150 /* AppDelegate.swift in Sources */,
 				CDCE04CA282718C3007FF150 /* SceneDelegate.swift in Sources */,
+				CD4FA72528354EF00074CAD6 /* WorldTourMapView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
