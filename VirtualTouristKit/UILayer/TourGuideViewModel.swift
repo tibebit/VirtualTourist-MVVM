@@ -11,6 +11,7 @@ import Foundation
 public class TourGuideViewModel {
     
     public var tourGuideRepository: TourGuideRepository
+    @Published public var stops:[Stop] = []
     
     public init(tourGuideRepository: TourGuideRepository) {
         self.tourGuideRepository = tourGuideRepository
@@ -18,12 +19,13 @@ public class TourGuideViewModel {
     
     
     public func add(stop: Stop) {
+        stops.append(stop)
         tourGuideRepository.store(stop: stop)
     }
     
     
-    public func loadStops() -> [Stop]{
-        tourGuideRepository.retrieveStops()
+    public func retrieveStops() {
+        stops = tourGuideRepository.retrieveStops()
     }
     
     

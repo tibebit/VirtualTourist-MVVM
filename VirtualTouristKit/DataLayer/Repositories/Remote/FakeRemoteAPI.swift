@@ -13,11 +13,12 @@ public class FakeRemoteAPI: RemoteAPI {
     public init() {
         
     }
-    public func requestPhotos(data: PhotoRequest) -> [URL] {
+    
+    public func requestPhotos(data: PhotoRequest) async-> [URL] {
         return []
     }
     
-    public func fetchImage(from url: URL) -> Image {
+    public func fetchImage(from url: URL) async -> Image {
         return Image(url: url, data: url.dataRepresentation)
     }    
 }

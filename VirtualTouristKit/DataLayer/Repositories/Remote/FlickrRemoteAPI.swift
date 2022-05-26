@@ -32,12 +32,12 @@ public class FlickrRemoteAPI: RemoteAPI {
         self.apiKey = apiKey
     }
     
-    public func requestPhotos(data: PhotoRequest) -> [URL] {
+    public func requestPhotos(data: PhotoRequest) async -> [URL] {
         let components = URLComponents()
         return []
     }
     
-    public func fetchImage(from: URL) -> Image {
+    public func fetchImage(from: URL) async -> Image {
         return Image(url: URL(string: "https://google.com")!, data: Data())
     }
 }

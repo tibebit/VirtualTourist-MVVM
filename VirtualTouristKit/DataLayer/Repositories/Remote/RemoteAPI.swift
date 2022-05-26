@@ -8,6 +8,6 @@
 import Foundation
 
 public protocol RemoteAPI {
-    func requestPhotos(data: PhotoRequest) -> [URL]
-    func fetchImage(from: URL) -> Image
+    func requestPhotos(data: PhotoRequest) async -> [URL]
+    func fetchImage(from: URL) async -> Image
 }

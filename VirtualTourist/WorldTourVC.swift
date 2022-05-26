@@ -13,11 +13,13 @@ public class WorldTourVC: UIViewController {
     
     public var tourGuideViewModel: TourGuideViewModel
     public var mapView: WorldTourMapView
-    
+    public lazy var convertibleLongTap = {
+        return ConvertibleTapRecognizer(target: self, action: #selector(longTapDetected(_:)))
+    }()
     
     public init(tourGuideViewModel: TourGuideViewModel) {
         self.tourGuideViewModel = tourGuideViewModel
-        mapView = WorldTourMapView(tourGuideViewModel: tourGuideViewModel)
+        self.mapView = WorldTourMapView(tourGuideViewModel: tourGuideViewModel)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,6 +32,33 @@ public class WorldTourVC: UIViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         createLayout()
+        mapView.addGestureRecognizer(convertibleLongTap)
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: "TourStop")
+        mapView.delegate = self
+    }
+    
+    
+    @objc func longTapDetected(_ sender: ConvertibleTapRecognizer) {
+        tourGuideViewModel.add(stop: Stop(location: sender.convertTapToLocation()))
+    }
+}
+
+
+extension WorldTourVC: MKMapViewDelegate {
+    public func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseIdentifier = "TourStop"
+        
+        var marker = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier) as? MKMarkerAnnotationView
+
+        if marker == nil {
+            marker = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+            marker!.canShowCallout = true
+            marker!.tintColor = .red
+        }
+        else {
+            marker!.annotation = annotation
+        }
+        return marker
     }
 }
 
