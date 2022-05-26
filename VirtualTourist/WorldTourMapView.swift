@@ -35,7 +35,9 @@ public class WorldTourMapView: MKMapView {
                     .eraseToAnyPublisher()
             }
             .sink(receiveValue: { [weak self] in
-                self?.addAnnotation($0)
+                guard let self = self else { return }
+                self.addAnnotation($0)
+                self.setCenter(self.centerCoordinate, animated: false)
             })
             .store(in: &subscriptions)
     }
