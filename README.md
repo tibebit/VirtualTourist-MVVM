@@ -12,8 +12,8 @@ This project uses the MVVM pattern as the app's skeleton. It aims to reach the f
 3. Press `Cmd+U` to run the tests
 
 ## Requirements
-iOS 15.4
-Xcode 13
+* iOS 15.4
+* Xcode 13
 
 ## License
 MIT License
