@@ -11,6 +11,11 @@ public struct Location {
     
     public var latitude: Double
     public var longitude: Double
+    
+    public init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
 }
 
 public struct Image {
@@ -26,7 +31,7 @@ public class Stop: Identifiable {
     public var images: [Image]
     
     
-    public init(location: Location, images: [Image]) {
+    public init(location: Location, images: [Image] = []) {
         self.location = location
         self.images = images
     }
