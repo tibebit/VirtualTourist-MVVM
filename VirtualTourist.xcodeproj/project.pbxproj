@@ -268,15 +268,15 @@
 		CDCE04C6282718C3007FF150 /* VirtualTourist */ = {
 			isa = PBXGroup;
 			children = (
-				CD0503FD283FC0190087D456 /* Extensions */,
 				CDCE04C7282718C3007FF150 /* AppDelegate.swift */,
+				CDCE04D0282718C5007FF150 /* Assets.xcassets */,
+				CD0503FD283FC0190087D456 /* Extensions */,
+				CDCE04D5282718C5007FF150 /* Info.plist */,
+				CDCE04D2282718C5007FF150 /* LaunchScreen.storyboard */,
 				CDCE04C9282718C3007FF150 /* SceneDelegate.swift */,
 				CDCE04DB282719BB007FF150 /* VTAppDependencyContainer.swift */,
-				CDCE04CB282718C3007FF150 /* WorldTourVC.swift */,
-				CDCE04D0282718C5007FF150 /* Assets.xcassets */,
-				CDCE04D2282718C5007FF150 /* LaunchScreen.storyboard */,
-				CDCE04D5282718C5007FF150 /* Info.plist */,
 				CD4FA72428354EF00074CAD6 /* WorldTourMapView.swift */,
+				CDCE04CB282718C3007FF150 /* WorldTourVC.swift */,
 			);
 			path = VirtualTourist;
 			sourceTree = "<group>";

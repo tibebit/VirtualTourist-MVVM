@@ -48,6 +48,17 @@ public class ConvertibleTapRecognizer: UILongPressGestureRecognizer {
         view as! MKMapView
     }
     
+    public override init(target: Any?, action: Selector?) {
+        super.init(target: target, action: action)
+        configure()
+    }
+    
+    private func configure() {
+        minimumPressDuration = 1.0
+        allowableMovement = 0.0
+        numberOfTouchesRequired = 0
+    }
+    
     public func convertTapToLocation() -> Location {
         mapView
             .convert(location(in: mapView), toCoordinateFrom: mapView)

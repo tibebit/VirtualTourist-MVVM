@@ -21,8 +21,8 @@ class VirtualTouristTests: XCTestCase {
     func test_TourGuideViewModel_PublishesOneStopAfterLongTapDetection() {
         let tourGuideViewModel = TourGuideViewModel(tourGuideRepository: TourGuideRepositoryStub())
         let worldTourVC = WorldTourVC(tourGuideViewModel: tourGuideViewModel)
-        worldTourVC.loadViewIfNeeded()
         
+        worldTourVC.loadViewIfNeeded()
         worldTourVC.longTapDetected(worldTourVC.convertibleLongTap)
         
         
@@ -36,8 +36,8 @@ class VirtualTouristTests: XCTestCase {
     func test_WorldTourMapView_AddsOneAnnotationAfterLongTapDetection() {
         let tourGuideViewModel = TourGuideViewModel(tourGuideRepository: TourGuideRepositoryStub())
         let worldTourVC = WorldTourVC(tourGuideViewModel: tourGuideViewModel)
-        worldTourVC.loadViewIfNeeded()
         
+        worldTourVC.loadViewIfNeeded()
         worldTourVC.longTapDetected(worldTourVC.convertibleLongTap)
         
         worldTourVC.mapView.annotations.publisher.sink(receiveValue: { _ in
