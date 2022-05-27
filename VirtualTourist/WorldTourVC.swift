@@ -39,7 +39,9 @@ public class WorldTourVC: UIViewController {
     
     
     @objc func longTapDetected(_ sender: ConvertibleTapRecognizer) {
-        tourGuideViewModel.add(stop: Stop(location: sender.convertTapToLocation()))
+        if sender.state == .ended {
+            tourGuideViewModel.add(stop: Stop(location: sender.convertTapToLocation()))
+        }
     }
 }
 
